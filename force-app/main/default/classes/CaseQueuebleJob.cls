@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Chaminga Dissanayake
  * @group             : 
- * @last modified on  : 02-21-2021
+ * @last modified on  : 02-24-2021
  * @last modified by  : Chaminga Dissanayake
  * Modifications Log 
  * Ver   Date         Author                 Modification
@@ -33,7 +33,7 @@ public class CaseQueuebleJob implements Queueable, Database.AllowsCallouts {
             body += HttpFormBuilder.WriteBoundary();
             body += HttpFormBuilder.WriteBodyParameter('id', this.record.Id);
             body += HttpFormBuilder.WriteBoundary();
-            body += HttpFormBuilder.WriteBodyParameter('agentid', this.record.Id);
+            body += HttpFormBuilder.WriteBodyParameter('agentid', this.record.OwnerId);
             body += HttpFormBuilder.WriteBoundary(HttpFormBuilder.EndingType.CrLf);
 
             Blob formBlob = EncodingUtil.base64Decode(body);
